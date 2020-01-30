@@ -23,16 +23,13 @@ function windowResized() {
 
 function draw() {
     let size = parseInt(getUrlVars()['size']);
-    let _circle = getUrlVars()['circle'];
-    let _rect = getUrlVars()['rect'];
 
     let _color = getUrlVars()['color'];
 
     if (!size) size=100;
 
     if (mouseIsPressed) {
-        if (_circle) circle(mouseX, mouseY, size);
-        if (_rect) rect(mouseX,mouseY, mouseY, 100);
+        circle(mouseX, mouseY, size);
     }
 }
 
