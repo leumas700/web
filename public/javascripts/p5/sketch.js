@@ -24,7 +24,7 @@ function windowResized() {
 
 
 function draw() {
-    let size = parseInt(getUrlVars()['size']);
+    let size = parseInt(getUrlVars()['size']) || 100;
 
     let x = Math.floor(Math.random() * widthDiv);
     let y = Math.floor(Math.random() * heightDiv);
@@ -34,26 +34,26 @@ function draw() {
     let b = Math.floor(Math.random() * 256);
 
     //let c = color(r, g, b);
-    let c = color(255,255,255);
+    let c = color(255, 255, 255);
 
     fill(c);
 
-    if (!size) size = 100;
-
-    /*
     if (mouseIsPressed) {
         //circle(mouseX, mouseY, size);
-        circle(x, y, size);
-
-    }
-    */
-
-    if(touches.length) {
-        touches.forEach((touch) => circle(touch.x, touch.y, 50, 50));
+        //circle(x, y, size);
+        if (touches.length) {
+            drawShapeOnTouch(circle,size,size);
+        } else {
+            circle(mouseX, mouseY, size);
+        }
     }
 
 }
 
+
+function drawShapeOnTouch(shape, width, height) {
+    touches.forEach((touch) => shape(touch.x, touch.y, width, height));
+}
 
 function getUrlVars() {
     var vars = {};
