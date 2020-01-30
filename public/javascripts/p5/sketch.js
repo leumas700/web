@@ -33,10 +33,12 @@ function draw() {
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
 
-    //let c = color(r, g, b);
-    let c = color(255, 255, 255);
+    let c = color(r, g, b, 100);
+    //let c = color(255, 255, 255);
 
+    noStroke();
     fill(c);
+
 
     if (mouseIsPressed) {
         //circle(mouseX, mouseY, size);
