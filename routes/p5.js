@@ -3,9 +3,10 @@ var router = express.Router();
 
 
 
-
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
     res.render('p5', {});
 });
+
+
 
 module.exports = router;
