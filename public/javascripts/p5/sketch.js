@@ -2,7 +2,6 @@ function setup() {
     var canvasDiv = document.getElementById('sketch-holder');
     var width = canvasDiv.offsetWidth;
     var height = canvasDiv.offsetHeight;
-    var wHeight = windowHeight * 0.8;
 
     var canvas = createCanvas(width, height);
 
@@ -16,7 +15,6 @@ function windowResized() {
     var canvasDiv = document.getElementById('sketch-holder');
     var width = canvasDiv.offsetWidth;
     var height = canvasDiv.offsetHeight;
-    var wHeight = windowHeight * 0.8;
 
     resizeCanvas(width, height);
     background(0, 0, 100);
@@ -25,11 +23,16 @@ function windowResized() {
 
 function draw() {
     let size = parseInt(getUrlVars()['size']);
+    let _circle = getUrlVars()['circle'];
+    let _rect = getUrlVars()['rect'];
+
+    let _color = getUrlVars()['color'];
 
     if (!size) size=100;
 
     if (mouseIsPressed) {
-        circle(mouseX, mouseY, size);
+        if (_circle) circle(mouseX, mouseY, size);
+        if (_rect) rect(mouseX,mouseY, mouseY, 100);
     }
 }
 
