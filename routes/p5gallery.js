@@ -9,14 +9,9 @@ router.post('/page_navigation', (req, res, next) => {
     if (page === 'p5gallery') return res.render('p5gallery', {});
 });
 
-router.post('/save_sketch', (req, res, next) => {
+router.get('/', (req, res, next) => {
     res.render('p5gallery', {});
 });
-
-router.get('/', (req, res, next) => {
-    res.render('p5', {test: 'abc'});
-});
-
 
 
 module.exports = router;
