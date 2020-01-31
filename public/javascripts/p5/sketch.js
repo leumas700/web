@@ -42,7 +42,7 @@ function draw() {
 
     if (mouseIsPressed) {
         if (touches.length) {
-            drawShapeOnTouch(circle, size, size);
+            drawShapeOnTouch(circle, mouseY*0.5, size);
         } else {
             circle(mouseX, mouseY, mouseY*0.5);
             //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
