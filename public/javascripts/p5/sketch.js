@@ -1,5 +1,6 @@
 var canvasDiv, widthDiv, heightDiv;
 
+
 function setup() {
     canvasDiv = document.getElementById('sketch-holder');
     widthDiv = canvasDiv.offsetWidth;
@@ -26,27 +27,26 @@ function windowResized() {
 function draw() {
     let size = parseInt(getUrlVars()['size']) || 100;
 
-    let x = Math.floor(Math.random() * widthDiv);
-    let y = Math.floor(Math.random() * heightDiv);
+    let rndX = Math.floor(Math.random() * widthDiv);
+    let rndY = Math.floor(Math.random() * heightDiv);
 
-    let r = Math.floor(Math.random() * 256);
-    let g = Math.floor(Math.random() * 256);
-    let b = Math.floor(Math.random() * 256);
+    let rndR = Math.floor(Math.random() * 256);
+    let rndG = Math.floor(Math.random() * 256);
+    let rndB = Math.floor(Math.random() * 256);
 
-    let c = color(r, g, b, 100);
-    //let c = color(255, 255, 255);
+    //let c = color(rndR, rndG, rndB, 100);
+    let c = color(255, 0, 0);
 
-    noStroke();
     fill(c);
-
+    //noStroke();
 
     if (mouseIsPressed) {
-        //circle(mouseX, mouseY, size);
-        //circle(x, y, size);
         if (touches.length) {
-            drawShapeOnTouch(circle,size,size);
+            drawShapeOnTouch(circle, size, size);
         } else {
-            circle(mouseX, mouseY, size);
+            circle(mouseX, mouseY, mouseY*0.5);
+            //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
+            //rect(mouseX, mouseY, 100, mouseX)
         }
     }
 
