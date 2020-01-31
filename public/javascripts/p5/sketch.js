@@ -40,16 +40,14 @@ function draw() {
     fill(c);
     //noStroke();
 
+    //if (mouseInCanvasDiv()){
     if (mouseIsPressed) {
-        if (touches.length) {
-            drawShapeOnTouch(circle, mouseY*0.5, size);
-        } else {
-            circle(mouseX, mouseY, mouseY*2);
-            //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
-            //rect(mouseX, mouseY, 100, mouseX)
-        }
+        drawShapeOnTouch(circle, mouseY * 2, size);
+        circle(mouseX, mouseY, mouseY * 2);
+        //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
+        //rect(mouseX, mouseY, 100, mouseX)
     }
-
+    //}
 }
 
 
@@ -63,4 +61,9 @@ function getUrlVars() {
         vars[key] = value;
     });
     return vars;
+}
+
+function mouseInCanvasDiv() {
+
+    return true;
 }
