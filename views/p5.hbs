@@ -1,13 +1,17 @@
 <div id="sketch-holder" style="height: 85vh; touch-action: none;"></div>
 
+<br>
+
 <form method="post" action="/p5/save_sketch">
-    <label for="name">Name of drawing: </label>
-    <input type="text" name="name" placeholder="name">
-    <input type="submit">
+    <div class="form-group">
+        <label for="name">Name of drawing: </label>
+        <input class="form-control" type="text" name="name" placeholder="Enter name">
+    </div>
+    <input class="btn btn-primary" type="submit">
 </form>
 
 
-        <!-- P5JS -->
+<!-- P5JS -->
 <script src="/javascripts/p5/p5.js"></script>
 <!-- <script src="/javascripts/p5/p5.sound.js"></script> -->
 <script src="/javascripts/p5/sketch.js"></script>

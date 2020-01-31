@@ -10,7 +10,7 @@ router.post('/page_navigation', (req, res, next) => {
 });
 
 router.post('/save_sketch', (req, res, next) => {
-    res.render('p5gallery', {});
+    res.render('p5', {});
 });
 
 router.get('/', (req, res, next) => {
