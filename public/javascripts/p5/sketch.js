@@ -34,16 +34,16 @@ function draw() {
     let rndG = Math.floor(Math.random() * 256);
     let rndB = Math.floor(Math.random() * 256);
 
-    //let c = color(rndR, rndG, rndB, 100);
-    let c = color(255, 0, 0);
+    let c = color(rndR, rndG, rndB, 100);
+    //let c = color(255, 0, 0);
 
     fill(c);
     //noStroke();
 
     //if (mouseInCanvasDiv()){
     if (mouseIsPressed) {
-        drawShapeOnTouch(circle, mouseY * 2, size);
-        circle(mouseX, mouseY, mouseY * 2);
+        drawShapeOnTouch(circle, mouseY, size);
+        circle(mouseX, mouseY, mouseY);
         //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
         //rect(mouseX, mouseY, 100, mouseX)
     }
