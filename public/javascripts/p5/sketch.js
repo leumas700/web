@@ -1,4 +1,4 @@
-var canvasDiv, widthDiv, heightDiv;
+var canvas, canvasDiv, widthDiv, heightDiv;
 
 
 function setup() {
@@ -6,7 +6,7 @@ function setup() {
     widthDiv = canvasDiv.offsetWidth;
     heightDiv = canvasDiv.offsetHeight;
 
-    var canvas = createCanvas(widthDiv, heightDiv);
+    canvas = createCanvas(widthDiv, heightDiv);
 
     canvas.style('display', 'block');
     canvas.parent('sketch-holder');
@@ -40,14 +40,16 @@ function draw() {
     fill(c);
     //noStroke();
 
-    //if (mouseInCanvasDiv()){
-    if (mouseIsPressed) {
-        drawShapeOnTouch(circle, mouseY, size);
-        circle(mouseX, mouseY, mouseY);
-        //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
-        //rect(mouseX, mouseY, 100, mouseX)
-    }
-    //}
+
+    canvas.mouseOver(
+        if (mouseIsPressed) {
+            drawShapeOnTouch(circle, mouseY, size);
+            circle(mouseX, mouseY, mouseY);
+            //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
+            //rect(mouseX, mouseY, 100, mouseX);
+        }
+    );
+    
 }
 
 
