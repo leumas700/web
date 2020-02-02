@@ -41,14 +41,14 @@ function draw() {
     //noStroke();
 
 
-    canvas.mouseOver(
+    canvas.mouseOver(() => {
         if (mouseIsPressed) {
             drawShapeOnTouch(circle, mouseY, size);
             circle(mouseX, mouseY, mouseY);
             //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
             //rect(mouseX, mouseY, 100, mouseX);
         }
-    );
+    });
     
 }
 
