@@ -63,8 +63,7 @@ function draw() {
     let rX = Math.round(Math.random()) * 2 - 1;
     let rY = Math.round(Math.random()) * 2 - 1;
 
-    lastX = lastX + rX;
-    lastY = lastY + rY;
+   
 
     if (rX < 0) {
         lastX -= Math.floor(Math.random() * 10);
@@ -77,8 +76,14 @@ function draw() {
     } else {
         lastY += Math.floor(Math.random() * 10);
     }
-    circle(lastX, lastY, 50, 50);
-
+    
+    if (lastX < 0) {
+        circle(lastX +10, lastY, 50, 50);
+    } else if (lastX > divWidth) {
+        circle(lastX -10, lastY, 50, 50);
+    } else {
+        circle(lastX, lastY, 50, 50);
+    }
 }
 
 
