@@ -57,7 +57,7 @@ function draw() {
     //let c = color(255, 0, 0);
 
     fill(c);
-    //noStroke();
+    noStroke();
 
 
     let rX = Math.round(Math.random()) * 2 - 1;
@@ -81,6 +81,10 @@ function draw() {
         circle(lastX +10, lastY, 50, 50);
     } else if (lastX > divWidth) {
         circle(lastX -10, lastY, 50, 50);
+    }  if (lastY < 0) {
+        circle(lastX, lastY +10, 50, 50);
+    } else if (lastY > divHeight) {
+        circle(lastX, lastY -10, 50, 50);
     } else {
         circle(lastX, lastY, 50, 50);
     }
