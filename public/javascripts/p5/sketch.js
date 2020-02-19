@@ -70,7 +70,7 @@ function draw() {
         if (newX > 75) lastX = newX;
     } else {
         newX = lastX + Math.floor(Math.random() * 10);
-        if (newX < divWidth) lastX = newX;
+        if (newX < divWidth - 75) lastX = newX;
     }
 
     let newY;
@@ -79,7 +79,7 @@ function draw() {
         if (lastY > 75) lastY = newY;
     } else {
         newY = lastY + Math.floor(Math.random() * 10);
-        if (lastY < divHeight) lastY = newY;
+        if (lastY < divHeight - 75) lastY = newY;
     }
       
     circle(lastX, lastY, 75, 75);
