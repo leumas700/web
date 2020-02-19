@@ -60,10 +60,10 @@ function draw() {
     //noStroke();
 
 
+    fill(color(255, 0, 0, 200));
     let rX = Math.round(Math.random()) * 2 - 1;
     let rY = Math.round(Math.random()) * 2 - 1;
-
-   
+ 
     let newX;
     if (rX < 0) {
         newX = lastX - Math.floor(Math.random() * 10);
@@ -83,7 +83,51 @@ function draw() {
     }
       
     circle(lastX, lastY, 75, 75);
-    
+
+
+    fill(color(0, 255, 0, 200));
+    rX = Math.round(Math.random()) * 2 - 1;
+    rY = Math.round(Math.random()) * 2 - 1;
+
+    if (rX < 0) {
+        newX = lastX - Math.floor(Math.random() * 10);
+        if (newX > 75) lastX = newX;
+    } else {
+        newX = lastX + Math.floor(Math.random() * 10);
+        if (newX < divWidth - 75) lastX = newX;
+    }
+
+    if (rY < 0) {
+        newY = lastY - Math.floor(Math.random() * 10);
+        if (lastY > 75) lastY = newY;
+    } else {
+        newY = lastY + Math.floor(Math.random() * 10);
+        if (lastY < divHeight - 75) lastY = newY;
+    }
+      
+    circle(lastX, lastY, 75, 75);
+   
+    fill(color(0, 0, 255, 200));
+    rX = Math.round(Math.random()) * 2 - 1;
+    rY = Math.round(Math.random()) * 2 - 1;
+
+    if (rX < 0) {
+        newX = lastX - Math.floor(Math.random() * 10);
+        if (newX > 75) lastX = newX;
+    } else {
+        newX = lastX + Math.floor(Math.random() * 10);
+        if (newX < divWidth - 75) lastX = newX;
+    }
+
+    if (rY < 0) {
+        newY = lastY - Math.floor(Math.random() * 10);
+        if (lastY > 75) lastY = newY;
+    } else {
+        newY = lastY + Math.floor(Math.random() * 10);
+        if (lastY < divHeight - 75) lastY = newY;
+    }
+      
+    circle(lastX, lastY, 75, 75);
 }
 
 function drawShapeOnTouch(shape, width, height) {
