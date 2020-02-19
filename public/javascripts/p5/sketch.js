@@ -1,6 +1,8 @@
 let canvas, canvasDiv, divWidth, divHeight;
 let isMouseOverDiv = false;
 
+let lastX, lastY;
+
 function setup() {
     canvasDiv = document.getElementById('sketch-holder');
     divWidth = canvasDiv.offsetWidth;
@@ -19,6 +21,10 @@ function setup() {
     canvasDiv.addEventListener("mouseleave", () => {
         isMouseOverDiv = false
     });
+
+    lastX = divWidth/2;
+    lastY = divHeight/2;
+    //frameRate(1);
 }
 
 function windowResized() {
@@ -30,61 +36,55 @@ function windowResized() {
     background(0, 0, 100);
 }
 
-let lastX = 0;
-let lastY = 0;
+
+
+
 function draw() {
 
+    /*
     let size = parseInt(getUrlVars()['size']) || 100;
 
     let rndX = Math.floor(Math.random() * divWidth);
     let rndY = Math.floor(Math.random() * divHeight);
+     */
+
 
     let rndR = Math.floor(Math.random() * 256);
     let rndG = Math.floor(Math.random() * 256);
     let rndB = Math.floor(Math.random() * 256);
 
-    let c = color(rndR, rndG, rndB, 20);
-    //let c = color(255, 0, 0);
+    //let c = color(rndR, rndG, rndB, 200);
+    let c = color(255, 0, 0);
 
     fill(c);
     //noStroke();
 
 
-    if (isMouseOverDiv && mouseIsPressed) {
-        drawShapeOnTouch(circle, mouseY, size);
-        circle(mouseX, mouseY, mouseY);
-        //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
-        //rect(mouseX, mouseY, 100, mouseX);
+    let rX = Math.round(Math.random()) * 2 - 1;
+    let rY = Math.round(Math.random()) * 2 - 1;
+
+    lastX = lastX + rX;
+    lastY = lastY + rY;
+
+    if (rX < 0) {
+        lastX -= Math.floor(Math.random() * 20);
+    } else {
+        lastX += Math.floor(Math.random() * 20);
     }
 
-    line(lastX, divHeight, rndX, 0);
-    //rect(lastX,lastY,100,100);
-    lastX+=20;
-    lastY+=20;
-    if(lastX>divWidth) lastX=0;
-    if(lastY>divHeight) lastY=0;
-    //draw();
-    //drawRandomLines(0);
+    if (rY < 0) {
+        lastY -= Math.floor(Math.random() * 20);
+    } else {
+        lastY += Math.floor(Math.random() * 20);
+    }
+    circle(lastX, lastY, 50, 50);
+
 }
 
 
 function drawShapeOnTouch(shape, width, height) {
     touches.forEach((touch) => shape(touch.x, touch.y, width, height));
 }
-
-
-function drawRandomLines(lastX) {
-    let rndX = Math.floor(Math.random() * divWidth);
-    let rndY = Math.floor(Math.random() * divHeight);
-
-    //let lastX;
-    //let lastY;
-
-    circle(lastX, 500, rndX/3);
-
-    drawRandomLines(lastX+5);
-}
-
 
 
 function getUrlVars() {
