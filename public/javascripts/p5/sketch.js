@@ -53,8 +53,8 @@ function draw() {
     let rndG = Math.floor(Math.random() * 256);
     let rndB = Math.floor(Math.random() * 256);
 
-    //let c = color(rndR, rndG, rndB, 200);
-    let c = color(255, 0, 0);
+    let c = color(rndR, rndG, rndB, 200);
+    //let c = color(255, 0, 0);
 
     fill(c);
     //noStroke();
