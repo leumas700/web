@@ -67,15 +67,15 @@ function draw() {
     lastY = lastY + rY;
 
     if (rX < 0) {
-        lastX -= Math.floor(Math.random() * 20);
+        lastX -= Math.floor(Math.random() * 10);
     } else {
-        lastX += Math.floor(Math.random() * 20);
+        lastX += Math.floor(Math.random() * 10);
     }
 
     if (rY < 0) {
-        lastY -= Math.floor(Math.random() * 20);
+        lastY -= Math.floor(Math.random() * 10);
     } else {
-        lastY += Math.floor(Math.random() * 20);
+        lastY += Math.floor(Math.random() * 10);
     }
     circle(lastX, lastY, 50, 50);
 
