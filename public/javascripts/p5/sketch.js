@@ -64,23 +64,23 @@ function draw() {
     let rY = Math.round(Math.random()) * 2 - 1;
 
    
-
+    let newX;
     if (rX < 0) {
-        lastX -= Math.floor(Math.random() * 10);
+        newX = lastX - Math.floor(Math.random() * 10);
+        if (newX > 75) lastX = newX;
     } else {
-        lastX += Math.floor(Math.random() * 10);
+        newX = lastX + Math.floor(Math.random() * 10);
+        if (newX < divWidth) lastX = newX;
     }
 
+    let newY;
     if (rY < 0) {
-        lastY -= Math.floor(Math.random() * 10);
+        newY = lastY - Math.floor(Math.random() * 10);
+        if (lastY > 75) lastY = newY;
     } else {
-        lastY += Math.floor(Math.random() * 10);
+        newY = lastY + Math.floor(Math.random() * 10);
+        if (lastY < divHeight) lastY = newY;
     }
-    
-    if (lastX < 75) lastX += 10;
-    if (lastX > divWidth) lastX -=10;
-    if (lastY < 75) lastY += 10;
-    if (lastY > divHeight) lastY -= 10;
       
     circle(lastX, lastY, 75, 75);
     
