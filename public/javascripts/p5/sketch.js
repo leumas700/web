@@ -53,11 +53,11 @@ function draw() {
     let rndG = Math.floor(Math.random() * 256);
     let rndB = Math.floor(Math.random() * 256);
 
-    let c = color(rndR, rndG, rndB, 200);
-    //let c = color(255, 0, 0);
+    //let c = color(rndR, rndG, rndB, 200);
+    let c = color(255, 0, 0);
 
     fill(c);
-    noStroke();
+    //noStroke();
 
 
     let rX = Math.round(Math.random()) * 2 - 1;
@@ -82,10 +82,9 @@ function draw() {
     if (lastY < 0) lastY += 10;
     if (lastY > divHeight) lastY -= 10;
       
-    circle(lastX, lastY, 50, 50);
+    circle(lastX, lastY, 75, 75);
     
 }
-
 
 function drawShapeOnTouch(shape, width, height) {
     touches.forEach((touch) => shape(touch.x, touch.y, width, height));
