@@ -1,5 +1,5 @@
-var canvas, canvasDiv, widthDiv, heightDiv;
-
+let canvas, canvasDiv, widthDiv, heightDiv;
+let mouseOverDiv = false;
 
 function setup() {
     canvasDiv = document.getElementById('sketch-holder');
@@ -12,6 +12,13 @@ function setup() {
     canvas.parent('sketch-holder');
 
     background(0, 0, 100);
+
+    canvasDiv.addEventListener("mouseenter", () => {
+        mouseOverDiv = true
+    });
+    canvasDiv.addEventListener("mouseleave", () => {
+        mouseOverDiv = false
+    });
 }
 
 function windowResized() {
@@ -25,6 +32,7 @@ function windowResized() {
 
 
 function draw() {
+
     let size = parseInt(getUrlVars()['size']) || 100;
 
     let rndX = Math.floor(Math.random() * widthDiv);
@@ -34,22 +42,19 @@ function draw() {
     let rndG = Math.floor(Math.random() * 256);
     let rndB = Math.floor(Math.random() * 256);
 
-    let c = color(rndR, rndG, rndB, 100);
-    //let c = color(255, 0, 0);
+    //let c = color(rndR, rndG, rndB, 100);
+    let c = color(255, 0, 0);
 
     fill(c);
     //noStroke();
 
 
-    canvas.mouseOver(() => {
-        if (mouseIsPressed) {
-            drawShapeOnTouch(circle, mouseY, size);
-            circle(mouseX, mouseY, mouseY);
-            //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
-            //rect(mouseX, mouseY, 100, mouseX);
-        }
-    });
-    
+    if (mouseOverDiv && mouseIsPressed) {
+        drawShapeOnTouch(circle, mouseY, size);
+        circle(mouseX, mouseY, mouseY);
+        //triangle(rndX, rndY, mouseY, rndX, rndX, mouseY);
+        //rect(mouseX, mouseY, 100, mouseX);
+    }
 }
 
 
@@ -63,9 +68,4 @@ function getUrlVars() {
         vars[key] = value;
     });
     return vars;
-}
-
-function mouseInCanvasDiv() {
-
-    return true;
 }
