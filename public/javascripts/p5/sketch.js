@@ -77,9 +77,9 @@ function draw() {
         lastY += Math.floor(Math.random() * 10);
     }
     
-    if (lastX < 0) lastX += 10;
+    if (lastX < 75) lastX += 10;
     if (lastX > divWidth) lastX -=10;
-    if (lastY < 0) lastY += 10;
+    if (lastY < 75) lastY += 10;
     if (lastY > divHeight) lastY -= 10;
       
     circle(lastX, lastY, 75, 75);
