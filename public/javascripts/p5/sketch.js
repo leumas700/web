@@ -77,17 +77,13 @@ function draw() {
         lastY += Math.floor(Math.random() * 10);
     }
     
-    if (lastX < 0) {
-        circle(lastX +10, lastY, 50, 50);
-    } else if (lastX > divWidth) {
-        circle(lastX -10, lastY, 50, 50);
-    }  if (lastY < 0) {
-        circle(lastX, lastY +10, 50, 50);
-    } else if (lastY > divHeight) {
-        circle(lastX, lastY -10, 50, 50);
-    } else {
-        circle(lastX, lastY, 50, 50);
-    }
+    if (lastX < 0) lastX += 10;
+    if (lastX > divWidth) lastX -=10;
+    if (lastY < 0) lastY += 10;
+    if (lastY > divHeight) lastY -= 10;
+      
+    circle(lastX, lastY, 50, 50);
+    
 }
 
 
