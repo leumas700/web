@@ -70,19 +70,19 @@ function draw() {
     let newX;
     if (xDir < 0) {
         newX = lastX - Math.floor(Math.random() * 20);
-        if (newX > 75 / 2) lastX = newX;
+        if (newX > 100) lastX = newX;
     } else {
         newX = lastX + Math.floor(Math.random() * 20);
-        if (newX < divWidth - 75 / 2) lastX = newX;
+        if (newX < divWidth - 100) lastX = newX;
     }
 
     let newY;
     if (yDir < 0) {
         newY = lastY - Math.floor(Math.random() * 20);
-        if (newY > 75 / 2) lastY = newY;
+        if (newY > 100) lastY = newY;
     } else {
         newY = lastY + Math.floor(Math.random() * 20);
-        if (newY < divHeight - 75 / 2) lastY = newY;
+        if (newY < divHeight - 100) lastY = newY;
     }
 
     circle(lastX, lastY, 200);
@@ -99,6 +99,7 @@ function draw() {
         i -= 10;
         if (i < 250) dirRight = true;
     }
+
 
     if (mouseIsPressed) circle(mouseX, mouseY, mouseY);
 }
