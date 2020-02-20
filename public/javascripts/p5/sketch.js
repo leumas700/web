@@ -2,6 +2,7 @@ let canvas, canvasDiv, divWidth, divHeight;
 let isMouseOverDiv = false;
 
 let lastX, lastY, lastX2, lastY2, lastX3, lastY3;
+let i;
 
 function setup() {
     canvasDiv = document.getElementById('sketch-holder');
@@ -22,8 +23,10 @@ function setup() {
         isMouseOverDiv = false
     });
 
-    lastX = divWidth/2;
-    lastY = divHeight/2;
+    lastX = divWidth / 2;
+    lastY = divHeight / 2;
+
+    i = divWidth / 2;
 
     //frameRate(1);
 }
@@ -38,7 +41,7 @@ function windowResized() {
 }
 
 
-
+let dirRight = true;
 
 function draw() {
 
@@ -61,28 +64,43 @@ function draw() {
     //noStroke();
 
 
-    let dirX = Math.round(Math.random()) * 2 - 1;
-    let dirY = Math.round(Math.random()) * 2 - 1;
- 
+    let xDir = Math.round(Math.random()) * 2 - 1;
+    let yDir = Math.round(Math.random()) * 2 - 1;
+
     let newX;
-    if (dirX < 0) {
+    if (xDir < 0) {
         newX = lastX - Math.floor(Math.random() * 20);
-        if (newX > 75/2) lastX = newX;
+        if (newX > 75 / 2) lastX = newX;
     } else {
         newX = lastX + Math.floor(Math.random() * 20);
-        if (newX < divWidth - 75/2) lastX = newX;
+        if (newX < divWidth - 75 / 2) lastX = newX;
     }
 
     let newY;
-    if (dirY < 0) {
+    if (yDir < 0) {
         newY = lastY - Math.floor(Math.random() * 20);
-        if (newY > 75/2) lastY = newY;
+        if (newY > 75 / 2) lastY = newY;
     } else {
         newY = lastY + Math.floor(Math.random() * 20);
-        if (newY < divHeight - 75/2) lastY = newY;
+        if (newY < divHeight - 75 / 2) lastY = newY;
     }
-      
-    circle(lastX, lastY, 75, 75);
+
+    circle(lastX, lastY, 200);
+    //line(lastX, lastY, newX-100, newY-100);
+
+
+    //circle(i, divHeight / 2, 500);
+
+    if (dirRight) {
+        i += 10;
+        if (i > divWidth - 250) dirRight = false;
+
+    } else if (!dirRight) {
+        i -= 10;
+        if (i < 250) dirRight = true;
+    }
+
+    if (mouseIsPressed) circle(mouseX, mouseY, mouseY);
 }
 
 function drawShapeOnTouch(shape, width, height) {

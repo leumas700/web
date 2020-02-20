@@ -1,12 +1,18 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-  //background-image: url("../images/Bergä.JPG");
-  background-repeat: no-repeat;
-  background-size: 100%;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+.sketch-holder {
+    position: absolute;
+    top: 8%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*  height: 85vh;  */
+    touch-action: none;
 }

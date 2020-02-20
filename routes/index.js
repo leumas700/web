@@ -8,7 +8,6 @@ router.post('/page_navigation', (req, res, next) => {
   if (page === 'index') return res.render('index', {});
   if (page === 'p5') return res.render('p5', {});
   if (page === 'p5gallery') return res.render('p5gallery', {});
-
 });
 
 router.get('/', function(req, res, next) {
