@@ -118,10 +118,10 @@ function draw() {
 
     if (rX < 0) {
         newX = lastX3 - Math.floor(Math.random() * 10);
-        if (newX > 75) lastX3 = newX;
+        if (newX > 75/2) lastX3 = newX;
     } else {
         newX = lastX3 + Math.floor(Math.random() * 10);
-        if (newX < divWidth - 75) lastX3 = newX;
+        if (newX < divWidth - 75/2) lastX3 = newX;
     }
 
     if (rY < 0) {
