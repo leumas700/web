@@ -85,7 +85,7 @@ function draw() {
         if (newY < divHeight - 100) lastY = newY;
     }
 
-    circle(lastX, lastY, 200);
+    //circle(lastX, lastY, 200);
     //line(lastX, lastY, newX-100, newY-100);
 
 

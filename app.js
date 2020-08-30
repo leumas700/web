@@ -1,19 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
 
-var index = require('./routes/index');
-var p5 = require('./routes/p5');
-var p5gallery = require('./routes/p5gallery');
+let index = require('./routes/index');
+let p5 = require('./routes/p5');
+let p5gallery = require('./routes/p5gallery');
 
 
-var app = express();
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-var exphbs = require('express-handlebars');
+let exphbs = require('express-handlebars');
 app.engine('hbs', exphbs({
   defaultLayout: __dirname + '/views/layouts/layout.hbs',
   partialsDir: __dirname + '/views/partials',
@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/p5', p5);
-app.use('/p5gallery', p5gallery)
+app.use('/p5gallery', p5gallery);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
