@@ -89,7 +89,7 @@ function draw() {
     //line(lastX, lastY, newX-100, newY-100);
 
 
-    //circle(i, divHeight / 2, 500);
+    /*circle(i, divHeight / 2, 500);
 
     if (dirRight) {
         i += 10;
@@ -99,7 +99,7 @@ function draw() {
         i -= 10;
         if (i < 250) dirRight = true;
     }
-
+    */
 
     if (mouseIsPressed) circle(mouseX, mouseY, mouseY);
 }
